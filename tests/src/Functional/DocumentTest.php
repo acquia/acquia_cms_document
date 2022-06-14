@@ -44,6 +44,11 @@ class DocumentTest extends MediaTypeTestBase {
   /**
    * {@inheritdoc}
    */
+  protected $fieldName = 'files[field_media_file_0]';
+
+  /**
+   * {@inheritdoc}
+   */
   protected function doTestEditForm() : void {
     $session = $this->getSession();
     $page = $session->getPage();
@@ -60,7 +65,7 @@ class DocumentTest extends MediaTypeTestBase {
 
     // Assert that the expected fields show up.
     $assert_session->fieldExists('Name');
-    $assert_session->fieldExists('File');
+    $assert_session->fieldExists('Add a new file');
     $assert_session->fieldExists('Categories');
     $assert_session->fieldExists('Tags');
     // The standard Categories and Tags fields should be present.
